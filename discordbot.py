@@ -1,6 +1,5 @@
 import os
 import traceback
-import discord
 
 from discord.ext import commands
 # from grouping import MakeTeam
