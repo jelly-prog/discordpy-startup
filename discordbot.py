@@ -1,8 +1,11 @@
 from discord.ext import commands
 
+
 import os
 import traceback
 import discord
+
+from grouping import MakeTeam
 
 intents = discord.Intents.all()  # デフォルトのIntentsオブジェクトを生成
 bot = commands.Bot(command_prefix='/', intents=intents)
