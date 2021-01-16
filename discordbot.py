@@ -15,13 +15,6 @@ token = os.environ['DISCORD_BOT_TOKEN']
 # error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
 # await ctx.send(error_msg)
 
-# Team
-@bot.command()
-async def team_test(ctx):
-    make_team = MakeTeam()
-    msg = make_team.get_voicechannelmembers(ctx)
-    await ctx.channel.send(msg)
-
 # メンバー数が均等になるチーム分け
 @bot.command()
 async def team(ctx, specified_num=2):
