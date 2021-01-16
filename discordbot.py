@@ -15,13 +15,6 @@ async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
-
-# メンバー数が均等になるチーム分け
-@bot.command()
-async def team_test(ctx):
-    make_team = MakeTeam()
-    msg = make_team.get_VCData(ctx)
-    await ctx.channel.send(msg)
     
 # メンバー数が均等になるチーム分け
 @bot.command()
