@@ -1,16 +1,20 @@
-from discord.ext import commands
 import os
 import traceback
+import discord
 
+from discord.ext import commands
+# from grouping import MakeTeam
+
+intents = discord.Intents.all()  # デフォルトのIntentsオブジェクトを生成
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 
-# @bot.event
-# async def on_command_error(ctx, error):
-# orig_error = getattr(error, "original", error)
-# error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
-# await ctx.send(error_msg)
+@bot.event
+async def on_command_error(ctx, error):
+orig_error = getattr(error, "original", error)
+error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
+await ctx.send(error_msg)
 
 # メンバー数が均等になるチーム分け
 @bot.command()
