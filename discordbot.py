@@ -6,7 +6,7 @@ from discord.ext import commands
 from grouping import MakeTeam
 
 intents = discord.Intents.all()  # デフォルトのIntentsオブジェクトを生成
-bot = commands.client(command_prefix='/', intents=intents)
+bot = commands.bot(command_prefix='/', intents=intents)
 token = os.environ['DISCORD_BOT_TOKEN']
 
 # @bot.event
