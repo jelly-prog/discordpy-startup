@@ -19,7 +19,16 @@ class MakeTeam:
         self.channel_mem = [i.name for i in state.channel.members] # VCメンバリスト取得
         self.mem_len = len(self.channel_mem) # 人数取得
         return True
+    
+    def get_VCData(self, ctx):
+        state = ctx.author.voice # コマンド実行者のVCステータスを取得
+        if state is None: 
+            return False
 
+        self.channel_mem = [i.name for i in state.channel.members] # VCメンバリスト取得
+        self.mem_len = len(self.channel_mem) # 人数取得
+        return True
+    
     # チーム数を指定した場合のチーム分け
     def make_party_num(self, ctx, party_num, remainder_flag='false'):
         team = []
