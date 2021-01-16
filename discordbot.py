@@ -18,6 +18,13 @@ async def on_command_error(ctx, error):
 
 # メンバー数が均等になるチーム分け
 @bot.command()
+async def team_test(ctx):
+    make_team = MakeTeam()
+    msg = make_team.get_VCData(ctx)
+    await ctx.channel.send(msg)
+    
+# メンバー数が均等になるチーム分け
+@bot.command()
 async def team(ctx, specified_num=2):
     make_team = MakeTeam()
     remainder_flag = 'true'
